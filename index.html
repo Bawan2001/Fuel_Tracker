@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Fuel Tracker — Check your vehicle's fuel eligibility based on number plate odd/even rule and day of the week." />
+  <meta name="theme-color" content="#0a0e1a" />
+  <title>Fuel Tracker — Odd/Even Number Plate System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Language Switcher -->
+  <div class="lang-switcher" id="lang-switcher">
+    <button class="lang-btn active" data-lang="en" id="lang-en" title="English">🇬🇧 EN</button>
+    <button class="lang-btn" data-lang="si" id="lang-si" title="සිංහල">🇱🇰 සිං</button>
+    <button class="lang-btn" data-lang="ta" id="lang-ta" title="தமிழ்">🇱🇰 தமி</button>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-icon">⛽</div>
+    <h1 data-i18n="heroTitle">Fuel Tracker</h1>
+    <p data-i18n="heroSubtitle">Check your vehicle's fuel eligibility based on the odd/even number plate rule</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Today's Status -->
+    <section class="glass-card" id="today-card">
+      <div class="card-title"><span class="icon">📅</span> <span data-i18n="todayStatus">Today's Status</span></div>
+      <div class="today-banner">
+        <div class="today-info">
+          <span class="label" data-i18n="labelDay">Day</span>
+          <span class="value" id="today-day">—</span>
+        </div>
+        <div class="today-info">
+          <span class="label" data-i18n="labelDate">Date</span>
+          <span class="value" id="today-date">—</span>
+        </div>
+        <div class="today-info">
+          <span class="label" data-i18n="labelPlatesAllowed">Plates Allowed</span>
+          <span class="badge" id="today-badge">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plate Checker -->
+    <section class="glass-card" id="checker-card">
+      <div class="card-title"><span class="icon">🔍</span> <span data-i18n="checkEligibility">Check Eligibility</span>
+      </div>
+
+      <div class="input-group">
+        <label for="plate-input" data-i18n="enterPlate">Enter Vehicle Number Plate</label>
+        <div class="plate-input-wrapper">
+          <span class="input-icon">🚗</span>
+          <input type="text" id="plate-input" class="plate-input" placeholder="e.g. MH 12 AB 1234" maxlength="20"
+            autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="date-picker" data-i18n="selectDate">Select Date</label>
+        <div class="date-picker-wrapper">
+          <span class="input-icon">📅</span>
+          <input type="date" id="date-picker" class="date-picker" />
+          <div class="date-day-hint" id="date-day-hint"></div>
+        </div>
+      </div>
+
+      <button class="btn-check" id="btn-check">
+        <span>⛽</span> <span data-i18n="btnCheck">Check Fuel Eligibility</span>
+      </button>
+
+      <!-- Result Panel -->
+      <div class="result-panel" id="result-panel">
+        <div class="result-content" id="result-content">
+          <div class="result-icon" id="result-icon"></div>
+          <div class="result-plate-display" id="result-plate"></div>
+          <div class="result-status" id="result-status"></div>
+          <div class="result-detail" id="result-detail"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Schedule -->
+    <section class="glass-card" id="schedule-card">
+      <div class="card-title"><span class="icon">🗓️</span> <span data-i18n="weeklySchedule">Weekly Schedule</span>
+      </div>
+      <table class="schedule-table" id="schedule-table">
+        <thead>
+          <tr>
+            <th data-i18n="thDay">Day</th>
+            <th data-i18n="thType">Type</th>
+            <th data-i18n="thPlatesAllowed">Plates Allowed (Last Digit)</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body">
+          <!-- Filled by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- History -->
+    <section class="glass-card" id="history-card">
+      <div class="history-header">
+        <div class="card-title"><span class="icon">📋</span> <span data-i18n="checkHistory">Check History</span></div>
+        <button class="btn-clear" id="btn-clear">🗑️ <span data-i18n="clearAll">Clear All</span></button>
+      </div>
+      <div id="history-container">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" data-i18n="footer">
+    Fuel Tracker © 2026 — Made with Bawan Creation
+
+    <script src="script.js"></script>
+</body>
+
+</html>
