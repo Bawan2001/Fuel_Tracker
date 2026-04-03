@@ -26,3 +26,7 @@ Alternatively, to run the application locally:
 - **HTML5:** For the basic structure and forms.
 - **CSS3:** For styling, custom animations, and a responsive layout using custom utility classes prioritizing Glassmorphism aesthetics.
 - **Vanilla JavaScript:** For logic, translation processing, and history tracking. No external libraries are used!
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
